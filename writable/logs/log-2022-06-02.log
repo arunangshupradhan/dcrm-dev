@@ -1,0 +1,138 @@
+CRITICAL - 2022-06-02 00:42:40 --> Invalid file: AdminPlan\Views\plan-list.php
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminPlan\\Views...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('AdminPlan\\Views...', Array, true)
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(38): view('AdminPlan\\Views...', Array)
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->index()
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-02 00:43:38 --> Invalid file: AdminPlan\Views\plan-list.php
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminPlan\\Views...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('AdminPlan\\Views...', Array, true)
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(41): view('AdminPlan\\Views...', Array)
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->index()
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-02 00:43:46 --> Invalid file: AdminPlan\Views\plan-list.php
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminPlan\\Views...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('AdminPlan\\Views...', Array, true)
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(39): view('AdminPlan\\Views...', Array)
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->index()
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-02 00:44:02 --> Invalid file: AdminPlan\Views\plan-list.php
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminPlan\\Views...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('AdminPlan\\Views...', Array, true)
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(39): view('AdminPlan\\Views...', Array)
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->index()
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-02 00:44:27 --> Invalid file: AdminPlan\Views\plan-list.php
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminPlan\\Views...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('AdminPlan\\Views...', Array, true)
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(39): view('AdminPlan\\Views...', Array)
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->index()
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-02 00:44:36 --> Invalid file: AdminPlan\Views\plan-list.php
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminPlan\\Views...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('AdminPlan\\Views...', Array, true)
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(39): view('AdminPlan\\Views...', Array)
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->index()
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-02 01:02:30 --> You must supply the parameters: from, to.
+#0 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Config/Routes.php(4): CodeIgniter\Router\RouteCollection->match(Array, 'PlanController:...')
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Router/RouteCollection.php(607): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+#2 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->group('', Array, Object(Closure))
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Router/RouteCollection.php(354): include('/home3/phpblkr8...')
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Router/RouteCollection.php(426): CodeIgniter\Router\RouteCollection->discoverRoutes()
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Router/Router.php(351): CodeIgniter\Router\RouteCollection->getRoutes('get')
+#6 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Router/Router.php(154): CodeIgniter\Router\Router->checkRoutes('admin/plan')
+#7 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(726): CodeIgniter\Router\Router->handle('admin/plan')
+#8 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#9 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-06-02 01:08:16 --> Class "CodeIgniter\BaseController" not found
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(264): include_once()
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home3/phpblkr8...')
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('AdminPlan\\Contr...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('AdminPlan\\Contr...')
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(797): class_exists('\\AdminPlan\\Cont...', true)
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-02 01:08:28 --> Class "AdminPlan\Controllers\BaseController" not found
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(264): include_once()
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home3/phpblkr8...')
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('AdminPlan\\Contr...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('AdminPlan\\Contr...')
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(797): class_exists('\\AdminPlan\\Cont...', true)
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-02 01:09:05 --> Class "AdminPlan\Controllers\App\BaseController" not found
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(264): include_once()
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home3/phpblkr8...')
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('AdminPlan\\Contr...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('AdminPlan\\Contr...')
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(797): class_exists('\\AdminPlan\\Cont...', true)
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-02 01:09:21 --> Class "App\BaseController" not found
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(264): include_once()
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home3/phpblkr8...')
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('AdminPlan\\Contr...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('AdminPlan\\Contr...')
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(797): class_exists('\\AdminPlan\\Cont...', true)
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-02 01:10:12 --> Class "AdminPlan\Controllers\BaseController" not found
+#0 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(264): include_once()
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/home3/phpblkr8...')
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('AdminPlan\\Contr...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('AdminPlan\\Contr...')
+#4 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(797): class_exists('\\AdminPlan\\Cont...', true)
+#5 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-02 01:14:44 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$getPost
+#0 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', '/home3/phpblkr8...', 31)
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->addPlan()
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-02 01:18:07 --> Undefined array key "save-plan"
+#0 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', '/home3/phpblkr8...', 33)
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->addPlan()
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-02 01:19:09 --> Undefined array key "save-plan"
+#0 /home3/phpblkr8/public_html/docker/app/Modules/Admin/Plan/Controllers/PlanController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', '/home3/phpblkr8...', 33)
+#1 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(832): AdminPlan\Controllers\PlanController->addPlan()
+#2 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(AdminPlan\Controllers\PlanController))
+#3 /home3/phpblkr8/public_html/docker/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home3/phpblkr8/public_html/docker/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
