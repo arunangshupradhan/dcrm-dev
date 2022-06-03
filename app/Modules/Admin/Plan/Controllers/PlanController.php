@@ -23,7 +23,7 @@ class PlanController extends BaseController
 	public function index($id = 0)
 	{	
 		if (($this->request->getMethod() == "get") && !$this->request->isAjax()) { 
-			$this->data['title'] = 'Plans';
+			$this->data['title'] = 'Our Existing Plans';
 			$this->data['plans'] = $this->crud->select('plans', '', ['is_deleted' => 2], 'id DESC');
 			if (!empty($id)) {
 				$this->data['details'] = $details = $this->crud->select('plans', '', ['id' => $id], '', TRUE);

@@ -17,6 +17,7 @@
         <link href="<?= site_url('assets/libs/scriptlab-swall/swall.min.css'); ?>" rel="stylesheet" />
 
         <link href="<?= site_url(); ?>assets/css/style.css" rel="stylesheet" />
+        <link href="<?= site_url(); ?>assets/css/custom.css" rel="stylesheet" />
 
     </head>
 
@@ -48,13 +49,7 @@
                         <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                             <i class="fa fa-fw fa-bars"></i>
                         </button>
-
-                        <form class="app-search d-none d-lg-block">
-                            <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="bx bx-search-alt"></span>
-                            </div>
-                        </form>
+                          <h4 class="mb-sm-0 font-size-18 top-title"><?= $title ?></h4>
                     </div>
 
                     <div class="d-flex">

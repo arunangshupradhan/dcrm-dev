@@ -1,0 +1,9 @@
+#sidebar-menu ul li a i {
+    min-width: 1.2rem !important;
+}
+#sidebar-menu ul li ul.sub-menu li a {
+    padding: 0.1rem 1.5rem 0.4rem 2.9rem;
+}
+.top-title{margin-top: 25px;}
+.canvas-50{width: 50%;}
+.offcanvas-body{background: #f8f8fb;}
