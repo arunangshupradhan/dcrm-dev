@@ -67,6 +67,7 @@ class PlanController extends BaseController
 			);
 			if (empty($id)) {
 				$dataArr['created_at'] = strtotime('now');
+				$dataArr['added_by'] = $this->session->userData['id'];
 				if ($lastId = $this->crud->add('plans', $dataArr)) {
 					$this->data['success'] = true;
 					$this->data['message'] = 'Plan has been successfully created.';
@@ -74,6 +75,7 @@ class PlanController extends BaseController
 				}
 			} else {
 				$dataArr['updated_at'] = strtotime('now');
+				$dataArr['last_updated_by'] = $this->session->userData['id'];
 				if ($lastId = $this->crud->updateData('plans', ['id' => $id], $dataArr)) {
 					$this->data['success'] = true;
 					$this->data['message'] = 'Plan has been successfully updated.';
