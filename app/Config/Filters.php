@@ -19,6 +19,9 @@ class Filters extends BaseConfig
      */
     public $aliases = [
         'csrf'          => CSRF::class,
+        'adminAuth' => [
+            \App\Filters\AdminAuthFilter::class,
+        ],
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
@@ -66,5 +69,7 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'adminAuth' => ['before' => ['admin/*']],
+    ];
 }

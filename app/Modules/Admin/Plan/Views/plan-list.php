@@ -9,7 +9,7 @@
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                      
 
-                        <button type="button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="btn btn-primary waves-effect waves-light"> <i class="dripicons-plus bx font-size-16 align-middle"></i> Add New Plan </button>
+                        <button type="button" type="button"  class=" addPlan btn btn-primary waves-effect waves-light"> <i class="dripicons-plus bx font-size-16 align-middle"></i> Add New Plan </button>
                         
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                                                
                                             </div>
                                             <div class="py-4">
-                                                <h2><sup><small>$</small></sup> 19/ <span class="font-size-13">Per year</span></h2>
+                                                <h2><sup><small>$</small></sup> <?= $plan->plan_rate ?>/ <span class="font-size-13">Per year</span></h2>
                                             </div>
                                            
 
@@ -37,7 +37,7 @@
                                                     <?= sizeConverter($plan->storage_capacity, 'GB').' GB'; ?> Storage</p>
                                             </div>
                                              <div class="text-center plan-btn">
-                                                <a href="<?= site_url('admin/plan/').$plan->id; ?>" class="btn btn-primary btn-sm waves-effect waves-light"><i class="dripicons-document-edit bx font-size-12 align-middle"></i>  Modify</a> &nbsp
+                                                <a href="javascript:void(0)" data-edit="<?= $plan->id ?>" class="btn btn-primary btn-sm waves-effect waves-light editPlans"><i class="dripicons-document-edit bx font-size-12 align-middle"></i>  Modify</a> &nbsp
                                                 <a href="javascript: void(0);" data-delete="<?= $plan->id; ?>"  class="btn btn-danger btn-sm waves-effect waves-light deletePlan"><i class="dripicons-trash bx font-size-12 align-middle"></i>&nbsp Delete</a>
                                             </div>
                                         </div>
@@ -48,7 +48,7 @@
         </div> <!-- container-fluid -->
     </div>
 
-    <div class="offcanvas offcanvas-end canvas-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas offcanvas-end canvas-50" tabindex="-1" id="planCanvas" aria-labelledby="offcanvasRightLabel" style="visibility: visible;" aria-modal="true" role="dialog">
             <div class="offcanvas-header">
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -62,19 +62,25 @@
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label for="plan_name">Plan Name <span class="text-danger">*</span></label>
-                                            <input id="plan_name" name="plan_name" type="text" class="form-control char" placeholder="Plan Name" value="<?= empty($details)?'':$details->plan_name; ?>">
+                                            <input id="plan_name" name="plan_name" type="text" class="form-control char" placeholder="Plan Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label for="number_of_client">Number of Clients <span class="text-danger">*</span></label>
-                                            <input id="number_of_client" name="number_of_client" type="text" class="form-control numbers" placeholder="Number of Client" value="<?= empty($details)?'':$details->number_of_client; ?>">
+                                            <input id="number_of_client" name="number_of_client" type="text" class="form-control numbers" placeholder="Number of Client">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label for="storage_capacity">Storage Capacity <span class="text-danger">*</span></label>
-                                            <input id="storage_capacity" name="storage_capacity" type="text" class="form-control decimal" placeholder="Storage Capacity" value="<?= empty($details)?'':sizeConverter($details->storage_capacity, 'GB') ?>">
+                                            <input id="storage_capacity" name="storage_capacity" type="text" class="form-control decimal" placeholder="Storage Capacity">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <label for="storage_capacity">Plan Rate <span class="text-danger">*</span></label>
+                                            <input id="plan_rate" name="plan_rate" type="text" class="form-control numbers" placeholder="Plan Rate">
                                         </div>
                                     </div>
                                 </div>

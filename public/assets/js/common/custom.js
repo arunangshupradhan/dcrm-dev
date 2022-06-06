@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$("#defaultBtn").click("#defaultForm", function (e) {
 		event.preventDefault();
 		// $('#defaultForm').addClass(formProgress);
-		btnText = $('#defaultBtn').text();
+		btnText = $('#defaultBtn').html();
 		$('#defaultBtn').toggleClass("btn-primary btn-dark").html(btnReplace).prop('disabled', true);
 		var formData = new FormData($("#defaultForm")[0]);
 
@@ -110,5 +110,44 @@ $(document).ready(function(){
 				}
 			}
 		});
+	});
+
+	$(document).on('click', '.editPlans', function(e){
+		e.preventDefault();
+		let parent = $(this);
+		$.ajax({
+			type: 'POST',
+			url: site_url+'admin/plan/get-plan',
+			data: {
+				'id': parent.attr('data-edit'),
+				csrf_token_name: $("[name='csrf_token_name']").val(),
+			},
+			success: function (data) {
+				var JsonObject= JSON.parse(data);
+				if (JsonObject.success) {
+					$("[name='csrf_token_name']").val(JsonObject.hash);
+					$('#defaultForm').trigger('reset').attr('action', site_url+'admin/plan/add-plan/'+JsonObject.details['id']);
+					$('#planCanvas .card-title').text('Update Plan');
+					$('#planCanvas #defaultBtn').html('<i class="dripicons-plus bx font-size-16 align-middle"></i> Update Plan');
+					$('#plan_name').val(JsonObject.details['plan_name']);
+					$('#number_of_client').val(JsonObject.details['number_of_client']);
+					$('#storage_capacity').val(JsonObject.details['storage_capacity']);
+					$('#plan_rate').val(JsonObject.details['plan_rate']);
+
+
+					$('#planCanvas').offcanvas('toggle')
+				} else {
+					$("[name='csrf_token_name']").val(JsonObject.hash);
+				}
+			}
+		},'json');
+	});
+
+	$(document).on('click', '.addPlan', function(e){
+		e.preventDefault();
+		$('#defaultForm').trigger('reset').attr('action', site_url+'admin/plan/add-plan/');
+		$('#planCanvas .card-title').text('Add New Plan');
+		$('#planCanvas #defaultBtn').html('<i class="dripicons-plus bx font-size-16 align-middle"></i> Add Plan');
+		$('#planCanvas').offcanvas('toggle')
 	});
 });
