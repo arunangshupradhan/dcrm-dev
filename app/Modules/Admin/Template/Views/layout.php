@@ -1,6 +1,7 @@
 <?php 
 use Config\Services;
 $this->session = Services::session();
+helper('custom');
 ?>
 <?= view('AdminTemplate\Views\include\_header') ?>
 <?= view('AdminTemplate\Views\include\_sidebar') ?>
