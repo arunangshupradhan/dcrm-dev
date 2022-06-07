@@ -12,8 +12,10 @@ class ValidateCaptcha
         $session = \Config\Services::session();
 		$captcha = $data['captcha'];
 		if ($captcha == $session->captcha) {
+			$session->remove('captcha');
             return true;  
         } else {
+        	$session->remove('captcha');
             return false;
         }
 	}
