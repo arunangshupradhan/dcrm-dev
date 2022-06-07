@@ -4,10 +4,9 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5
+class ComposerStaticInitc89a51d91aa3f57faede9973bb236cc1
 {
     public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -26,10 +25,6 @@ class ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5
         'T' => 
         array (
             'Tests\\Support\\' => 14,
-        ),
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
         'P' => 
         array (
@@ -57,12 +52,7 @@ class ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5
         ),
         'C' => 
         array (
-            'Config\\' => 7,
             'CodeIgniter\\' => 12,
-        ),
-        'A' => 
-        array (
-            'App\\' => 4,
         ),
     );
 
@@ -80,10 +70,6 @@ class ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5
         'Tests\\Support\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/_support',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Psr\\Log\\' => 
         array (
@@ -121,17 +107,9 @@ class ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-        'Config\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/Config',
-        ),
         'CodeIgniter\\' => 
         array (
             0 => __DIR__ . '/..' . '/codeigniter4/framework/system',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
@@ -774,10 +752,10 @@ class ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1c9f0b4e0e9aa1ac6407c190596df2a5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc89a51d91aa3f57faede9973bb236cc1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc89a51d91aa3f57faede9973bb236cc1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc89a51d91aa3f57faede9973bb236cc1::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc89a51d91aa3f57faede9973bb236cc1::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -9,12 +9,12 @@ class Email extends BaseConfig
     /**
      * @var string
      */
-    public $fromEmail = 'no-reply@docker.com';
+    public $fromEmail;
 
     /**
      * @var string
      */
-    public $fromName = 'DOCKER';
+    public $fromName;
 
     /**
      * @var string
@@ -47,28 +47,28 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPHost = 'phpblog.site';
+    public $SMTPHost;
 
     /**
      * SMTP Username
      *
      * @var string
      */
-    public $SMTPUser = '_mainaccount@phpblog.site';
+    public $SMTPUser;
 
     /**
      * SMTP Password
      *
      * @var string
      */
-    public $SMTPPass = '@14NdN13buiSWG~';
+    public $SMTPPass;
 
     /**
      * SMTP Port
      *
      * @var int
      */
-    public $SMTPPort = 465;
+    public $SMTPPort = 25;
 
     /**
      * SMTP Timeout (in seconds)
