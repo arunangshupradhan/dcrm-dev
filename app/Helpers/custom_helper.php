@@ -14,8 +14,8 @@ if (!function_exists('admin_name')) {
     }
 }
 
-if (!function_exists("random_string")) {
-    function random_string(int $length = 0, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string
+if (!function_exists("randomString")) {
+    function randomString(int $length = 0, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string
     {
         if ($length < 1) {
             return false;

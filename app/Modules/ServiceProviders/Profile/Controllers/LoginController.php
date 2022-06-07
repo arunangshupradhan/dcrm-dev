@@ -1,14 +1,15 @@
 <?php
-namespace AdminProfile\Controllers;
+namespace ProviderProfile\Controllers;
 
 use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
-use AdminProfile\Models\UserModel;
-use AdminProfile\Models\SessionLogModel;
+use ProviderProfile\Models\UserModel;
+use ProviderProfile\Models\SessionLogModel;
+use \App\Controllers\BaseController;
 
 
-class LoginController extends Controller
+class LoginController extends BaseController
 {
 	/**
 	 * Access to current session.
@@ -27,12 +28,7 @@ class LoginController extends Controller
 
 	public function __construct()
 	{
-		// start session
-		$this->session = Services::session();
-
-		// load auth settings
-		$this->config = config('AdminProfile');
-
+		$this->config = config('ProviderProfile');
 	}
 
     //--------------------------------------------------------------------
@@ -42,13 +38,14 @@ class LoginController extends Controller
 	 */
 	public function login()
 	{	
-		if ($this->session->isLoggedIn) {
-			if ($this->session->userData['group_id'] == 1) {
-				return redirect()->to('admin/dashboard');
+		if ($this->session->isProviderLoggedIn) {
+			if ($this->session->userData['group_id'] == 2) {
+				return redirect()->to('service-providers/dashboard');
 			}
-			
 		}
-		return view($this->config->views['admin-login'], ['config' => $this->config]);
+		$this->data['title'] = 'Login';
+		$this->data['config'] = $this->config;
+		return view($this->config->views['providers-login'], $this->data);
 	}
     //--------------------------------------------------------------------
 
@@ -71,7 +68,7 @@ class LoginController extends Controller
 		}
 		// check credentials
 		$users = new UserModel();
-		$user = $users->where(['email' => $this->request->getPost('email'), 'group_id' => 1] )->first();
+		$user = $users->where('email', $this->request->getPost('email'))->first();
 		$user || $user = $users->where('mobile', $this->request->getPost('email'))->first();
 		if (
 			is_null($user) ||

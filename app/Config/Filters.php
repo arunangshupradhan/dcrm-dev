@@ -41,6 +41,15 @@ class Filters extends BaseConfig
                     'admin/book/getAuthorDropdownData',
                 ],
             ],
+            'adminAuth' => [
+                'except' => [
+                    'admin/forgot-password',
+                    'admin/reset-password',
+                    'service-providers',
+                    'admin',
+                    'service-providers/*'
+                ],
+            ],
         ],
         'after' => [
             'toolbar',
@@ -74,6 +83,13 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'adminAuth' => ['before' => ['admin/*']],
+        // 'adminAuth' => [
+        //     'before' => [
+        //         'admin/*'
+        //     ],
+        //     'except' => [
+        //         'admin/forgot-password',
+        //     ],
+        // ],
     ];
 }
