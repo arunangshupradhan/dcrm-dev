@@ -43,11 +43,12 @@ class Filters extends BaseConfig
             ],
             'adminAuth' => [
                 'except' => [
+                    '',
                     'admin/forgot-password',
                     'admin/reset-password',
                     'service-providers',
                     'admin',
-                    'service-providers/*'
+                    'service-providers/*',
                 ],
             ],
         ],
