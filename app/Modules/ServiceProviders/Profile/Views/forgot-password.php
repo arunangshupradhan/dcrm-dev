@@ -1,5 +1,7 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
+<?php $validation = \Config\Services::validation(); ?>
+
 <div class="col-md-8 col-lg-6 col-xl-5">
     <div class="card overflow-hidden">
         <div class="bg-primary bg-soft">
@@ -27,11 +29,12 @@
             </div>
             <div class="p-2">
                 <?= view('AdminProfile\Views\_notifications') ?>
-                <form class="form-horizontal" method="POST" action="<?= site_url('admin/forgot-password'); ?>" onsubmit="submitButton.disabled = true; return true;" accept-charset="UTF-8">
+                <form class="form-horizontal" method="POST" action="<?= site_url('service-providers/forgot-password'); ?>" onsubmit="submitButton.disabled = true; return true;" accept-charset="UTF-8">
                     <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="useremail" class="form-label">Email</label>
-                        <input type="text" value="<?= old('email') ?>" class="form-control" name="email" placeholder="Enter email">
+                        <input type="text" class="form-control" name="email" placeholder="Enter email">
+                        <span class="text-danger"><?= $validation->getError('email'); ?><?= session('email-error') ?></span>
                     </div>
                     <div class="text-end">
                         <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Reset</button>
@@ -41,7 +44,7 @@
         </div>
     </div>
     <div class="mt-5 text-center">
-        <p>Remember It ? <a href="<?= site_url('admin') ?>" class="fw-medium text-primary"> Sign In here</a> </p>
+        <p>Remember It ? <a href="<?= site_url('service-providers') ?>" class="fw-medium text-primary"> Sign In here</a> </p>
         <p>© <script>document.write(new Date().getFullYear())</script> Docker. Crafted with <i class="mdi mdi-heart text-danger"></i> by Scriptlab</p>
     </div>
 </div>

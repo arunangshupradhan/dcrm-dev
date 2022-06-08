@@ -19,7 +19,10 @@ for($i = 0; $i < 10; $i++) {
 $black = imagecolorallocate($image, 0, 0, 0);
 $white = imagecolorallocate($image, 255, 255, 255);
 $textcolors = [$black, $white];
-$fonts = ['assets\fonts\captcha\Acme.ttf', 'assets\fonts\captcha\Ubuntu.ttf', 'assets\fonts\captcha\Merriweather.ttf', 'assets\fonts\captcha\PlayfairDisplay.ttf'];
+define('PATH', dirname(__FILE__));
+// $fonts = ['assets\fonts\captcha\Acme.ttf', 'assets\fonts\captcha\Ubuntu.ttf', 'assets\fonts\captcha\Merriweather.ttf', 'assets\fonts\captcha\PlayfairDisplay.ttf'];
+
+$fonts = [PATH.'/font/Acme.ttf', PATH.'/font/Ubuntu.ttf', PATH.'/font/Merriweather.ttf', PATH.'/font/PlayfairDisplay.ttf'];
 for($i = 0; $i < $string_length; $i++) {
 	$letter_space = round(170/$string_length);
 	$initial = 10;

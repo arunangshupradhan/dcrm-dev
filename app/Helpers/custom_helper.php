@@ -13,6 +13,19 @@ if (!function_exists('admin_name')) {
 
     }
 }
+if (!function_exists('providerName')) {
+    function providerName() {
+        $db = db_connect();
+        $builder = $db->table('users');
+        $session = \Config\Services::session();
+        $id = $session->providerData['id'];
+        $builder->select('name');
+        $builder->where('id', $id);
+        $data = $builder->get()->getRow()->name;
+        return $data;
+
+    }
+}
 
 if (!function_exists("randomString")) {
     function randomString(int $length = 0, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string
@@ -86,12 +99,7 @@ if (!function_exists('get_count')) {
         if (!empty($where)) {
             $builder->where($where);
         }
-        $count = $builder->countAllResults();
-        if ($count > 0) {
-            return $count;
-        } else {
-            return 0;
-        }
+        return $builder->countAllResults();
     }
 }
 
