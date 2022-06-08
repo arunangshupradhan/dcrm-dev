@@ -12,6 +12,8 @@ class ProviderProfile extends BaseConfig
     public $views = [
         'sign-up' => 'ProviderProfile\Views\sign-up',
         'providers-login' => 'ProviderProfile\Views\login',
+        'forgot-password' => 'ProviderProfile\Views\forgot-password',
+        'reset-password' => 'ProviderProfile\Views\reset-password',
     ];
 
     // Layout for the views to extend

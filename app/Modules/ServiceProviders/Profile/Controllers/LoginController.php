@@ -1,9 +1,5 @@
 <?php
 namespace ProviderProfile\Controllers;
-
-use CodeIgniter\Controller;
-use Config\Email;
-use Config\Services;
 use ProviderProfile\Models\UserModel;
 use ProviderProfile\Models\SessionLogModel;
 use \App\Controllers\BaseController;
@@ -11,20 +7,6 @@ use \App\Controllers\BaseController;
 
 class LoginController extends BaseController
 {
-	/**
-	 * Access to current session.
-	 *
-	 * @var \CodeIgniter\Session\Session
-	 */
-	protected $session;
-
-	/**
-	 * Authentication settings.
-	 */
-	protected $config;
-
-
-    //--------------------------------------------------------------------
 
 	public function __construct()
 	{
@@ -39,7 +21,7 @@ class LoginController extends BaseController
 	public function login()
 	{	
 		if ($this->session->isProviderLoggedIn) {
-			if ($this->session->userData['group_id'] == 2) {
+			if ($this->session->providerData['group_id'] == 2) {
 				return redirect()->to('service-providers/dashboard');
 			}
 		}
@@ -58,28 +40,25 @@ class LoginController extends BaseController
 
 		$rules = [
 			'email'		=> 'required',
-			'password' 	=> 'required|min_length[5]',
+			'password' 	=> 'required|min_length[8]',
 		];
 
 		if (! $this->validate($rules)) {
-			return redirect()->to('admin')
-			->withInput()
-			->with('errors', $this->validator->getErrors());
+			return redirect()->to('service-providers')
+			->withInput();
 		}
 		// check credentials
 		$users = new UserModel();
-		$user = $users->where('email', $this->request->getPost('email'))->first();
-		$user || $user = $users->where('mobile', $this->request->getPost('email'))->first();
-		if (
-			is_null($user) ||
-			! password_verify($this->request->getPost('password'), $user['password_hash'])
-		) {
-			return redirect()->to('admin')->withInput()->with('error', lang('Auth.wrongCredentials'));
+		$user = $users->where( ['email' => $this->request->getPost('email'), 'group_id' => 2])->first();
+		// $user || $user = $users->where('mobile', $this->request->getPost('email'))->first();
+		if (is_null($user) || !password_verify($this->request->getPost('password'), $user['password_hash'])) 
+		{
+			return redirect()->to('service-providers')->withInput()->with('error', lang('Profile.wrongCredentials'));
 		}
 
 		// check activation
 		if (!$user['active'] || !$user['is_deleted']) {
-			return redirect()->to('admin')->withInput()->with('error', lang('Auth.notActivated'));
+			return redirect()->to('service-providers')->withInput()->with('error', lang('Profile.notActivated'));
 		}
 
 		$agentData = array(
@@ -95,17 +74,14 @@ class LoginController extends BaseController
         $sessionID = $logM->insert_data($agentData);
 
 		// login OK, save user data to session
-		$this->session->set('isLoggedIn', true);
-		$this->session->set('userData', [
+		$this->session->set('isProviderLoggedIn', true);
+		$this->session->set('providerData', [
 			'id' 			=> $user['id'],
 			'group_id' 		=> $user['group_id'],
 			'sessionId'     => $sessionID,
 		]);
 
-		if($user['group_id'] == 1){
-			return redirect()->to('admin/dashboard');
-		}
-		
+		return redirect()->to('service-providers/dashboard');
 	}
 
     //--------------------------------------------------------------------
@@ -115,16 +91,16 @@ class LoginController extends BaseController
 	 */
 	public function logout()
 	{
-		if ($this->session->isLoggedIn) {
+		if ($this->session->isProviderLoggedIn) {
 			$agentData = array(
 				'session_end' => date("Y-m-d g:i a")
 			);
 			$logM = new SessionLogModel();
-			$logM->update_data($this->session->userData['sessionId'], $agentData);
-			$this->session->remove(['isLoggedIn', 'userData']);
+			$logM->update_data($this->session->providerData['sessionId'], $agentData);
+			$this->session->remove(['isProviderLoggedIn', 'providerData']);
 		}
 		
-		return redirect()->to('admin');
+		return redirect()->to('service-providers');
 	}
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AdminProfile\Models;
+namespace ProviderProfile\Models;
 
 use CodeIgniter\Model;
 

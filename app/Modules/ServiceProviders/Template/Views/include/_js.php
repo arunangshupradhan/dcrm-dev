@@ -1,5 +1,10 @@
 <script>
 	site_url = '<?= site_url() ?>';
+	var formProgress = 'formSubmitProgress',
+	btnProgress = 'btn-progress',
+	x_timer,
+	btnReplace = '<i class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i> Loading',
+	btnText = '';
 </script>
 <script src="<?= site_url(); ?>assets/libs/jquery/jquery.min.js"></script>
 <script src="<?= site_url(); ?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -20,8 +25,7 @@
 
 
 
-<script src="<?=site_url('assets/js/common/scripts.js?v=').filemtime('assets/js/common/scripts.js')?>"></script>
-<script src="<?=site_url('assets/js/common/custom.js?v=').filemtime('assets/js/common/custom.js')?>"></script>
+<script src="<?=site_url('service-provider/js/scripts.js?v=').filemtime('service-provider/js/scripts.js')?>"></script>
 
 <script>
 	//sweet alert
