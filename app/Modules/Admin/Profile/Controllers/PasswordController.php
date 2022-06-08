@@ -52,7 +52,7 @@ class PasswordController extends Controller
         }
 		// check if email exists in DB
 		$users = new UserModel();
-		$data = $users->where('email', $this->request->getPost('email'))->first();
+		$data = $users->where(['email' => $this->request->getPost('email'), 'group_id' => 1])->first();
 		if (! $data) {
             return redirect()->back()->with('error', lang('Auth.wrongEmail'));
         }
@@ -80,7 +80,7 @@ class PasswordController extends Controller
 	{
 		// check reset hash and expiration
 		$users = new UserModel();
-		$data = $users->where('reset_hash', $this->request->getGet('token'))
+		$data = $users->where(['reset_hash' => $this->request->getGet('token'), 'group_id' => 1])
 			->where('reset_expires >', time())
 			->first();
 
@@ -112,7 +112,7 @@ class PasswordController extends Controller
 
 		// check reset hash, expiration
 		$users = new UserModel();
-		$data = $users->where('reset_hash', $this->request->getPost('token'))
+		$data = $users->where(['reset_hash' => $this->request->getGet('token'), 'group_id' => 1])
 			->where('reset_expires >', time())
 			->first();
 

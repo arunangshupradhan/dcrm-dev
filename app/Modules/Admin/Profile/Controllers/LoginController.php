@@ -5,6 +5,7 @@ use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
 use AdminProfile\Models\UserModel;
+use AdminProfile\Models\SessionLogModel;
 
 
 class LoginController extends Controller
@@ -56,6 +57,8 @@ class LoginController extends Controller
 	 */
 	public function attemptLogin()
 	{
+		$agent = $this->request->getUserAgent();
+
 		$rules = [
 			'email'		=> 'required',
 			'password' 	=> 'required|min_length[5]',
@@ -68,7 +71,7 @@ class LoginController extends Controller
 		}
 		// check credentials
 		$users = new UserModel();
-		$user = $users->where('email', $this->request->getPost('email'))->first();
+		$user = $users->where(['email' => $this->request->getPost('email'), 'group_id' => 1] )->first();
 		$user || $user = $users->where('mobile', $this->request->getPost('email'))->first();
 		if (
 			is_null($user) ||
@@ -82,12 +85,26 @@ class LoginController extends Controller
 			return redirect()->to('admin')->withInput()->with('error', lang('Auth.notActivated'));
 		}
 
+		$agentData = array(
+			'browser' => $this->currentAgent($agent),
+			'platform' => $agent->getPlatform(),
+			'ip' => $this->request->getIPAddress(),
+			'user_id' => $user['id'],
+			'session_start' => date("Y-m-d g:i a")
+		);
+		$logM = new SessionLogModel();
+
+        // Add operation
+        $sessionID = $logM->insert_data($agentData);
+
 		// login OK, save user data to session
 		$this->session->set('isLoggedIn', true);
 		$this->session->set('userData', [
 			'id' 			=> $user['id'],
-			'group_id' 		=> $user['group_id']
+			'group_id' 		=> $user['group_id'],
+			'sessionId'     => $sessionID,
 		]);
+
 		if($user['group_id'] == 1){
 			return redirect()->to('admin/dashboard');
 		}
@@ -101,9 +118,32 @@ class LoginController extends Controller
 	 */
 	public function logout()
 	{
-		$this->session->remove(['isLoggedIn', 'userData']);
-
+		if ($this->session->isLoggedIn) {
+			$agentData = array(
+				'session_end' => date("Y-m-d g:i a")
+			);
+			$logM = new SessionLogModel();
+			$logM->update_data($this->session->userData['sessionId'], $agentData);
+			$this->session->remove(['isLoggedIn', 'userData']);
+		}
+		
 		return redirect()->to('admin');
 	}
 
+
+
+	// AGENT
+	private function currentAgent($agent)
+	{
+		if ($agent->isBrowser()) {
+			$currentAgent = $agent->getBrowser() . ' ' . $agent->getVersion();
+		} elseif ($agent->isRobot()) {
+			$currentAgent = $agent->getRobot();
+		} elseif ($agent->isMobile()) {
+			$currentAgent = $agent->getMobile();
+		} else {
+			$currentAgent = 'Unidentified User Agent';
+		}	
+		return $currentAgent;
+	}
 }

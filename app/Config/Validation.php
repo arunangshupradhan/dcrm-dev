@@ -7,6 +7,8 @@ use CodeIgniter\Validation\FileRules;
 use CodeIgniter\Validation\FormatRules;
 use CodeIgniter\Validation\Rules;
 use App\Validation\PasswordStrengthRules;
+use App\Validation\ValidateCaptcha;
+
 
 class Validation
 {
@@ -26,6 +28,7 @@ class Validation
         FileRules::class,
         CreditCardRules::class,
         PasswordStrengthRules::class,
+        ValidateCaptcha::class,
     ];
 
     /**

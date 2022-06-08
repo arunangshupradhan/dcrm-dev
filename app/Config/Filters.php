@@ -19,6 +19,9 @@ class Filters extends BaseConfig
      */
     public $aliases = [
         'csrf'          => CSRF::class,
+        'adminAuth' => [
+            \App\Filters\AdminAuthFilter::class,
+        ],
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
@@ -38,6 +41,16 @@ class Filters extends BaseConfig
                     'admin/book/getAuthorDropdownData',
                 ],
             ],
+            'adminAuth' => [
+                'except' => [
+                    '',
+                    'admin/forgot-password',
+                    'admin/reset-password',
+                    'service-providers',
+                    'admin',
+                    'service-providers/*',
+                ],
+            ],
         ],
         'after' => [
             'toolbar',
@@ -51,7 +64,11 @@ class Filters extends BaseConfig
      * particular HTTP method (GET, POST, etc.).
      *
      * Example:
-     * 'post' => ['csrf', 'throttle']
+     * 'post' => ['foo', 'bar']
+     *
+     * If you use this, you should disable auto-routing because auto-routing
+     * permits any HTTP method to access a controller. Accessing the controller
+     * with a method you don’t expect could bypass the filter.
      *
      * @var array
      */
@@ -66,5 +83,14 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        // 'adminAuth' => [
+        //     'before' => [
+        //         'admin/*'
+        //     ],
+        //     'except' => [
+        //         'admin/forgot-password',
+        //     ],
+        // ],
+    ];
 }

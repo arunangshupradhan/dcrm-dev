@@ -1,7 +1,7 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v4.1.9',
-        'version' => '4.1.9.0',
+        'pretty_version' => 'v4.2.0',
+        'version' => '4.2.0.0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,8 +11,8 @@
     ),
     'versions' => array(
         'codeigniter4/appstarter' => array(
-            'pretty_version' => 'v4.1.9',
-            'version' => '4.1.9.0',
+            'pretty_version' => 'v4.2.0',
+            'version' => '4.2.0.0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -20,12 +20,12 @@
             'dev_requirement' => false,
         ),
         'codeigniter4/framework' => array(
-            'pretty_version' => 'v4.1.9',
-            'version' => '4.1.9.0',
+            'pretty_version' => 'v4.2.0',
+            'version' => '4.2.0.0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../codeigniter4/framework',
             'aliases' => array(),
-            'reference' => '4ec623a6b8269dd09f570ab514e5864276bb7f56',
+            'reference' => '29f0e9eb2442eba41f4e9832b6695c7584e096e0',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(
@@ -370,15 +370,6 @@
             'reference' => '07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918',
             'dev_requirement' => true,
         ),
-        'symfony/polyfill-ctype' => array(
-            'pretty_version' => 'v1.25.0',
-            'version' => '1.25.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
-            'aliases' => array(),
-            'reference' => '30885182c981ab175d4d034db0f6f469898070ab',
-            'dev_requirement' => true,
-        ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.1',
             'version' => '1.2.1.0',
@@ -389,12 +380,12 @@
             'dev_requirement' => true,
         ),
         'webmozart/assert' => array(
-            'pretty_version' => '1.10.0',
-            'version' => '1.10.0.0',
+            'pretty_version' => '1.11.0',
+            'version' => '1.11.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../webmozart/assert',
             'aliases' => array(),
-            'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
+            'reference' => '11cb2199493b2f8a3b53e7f19068fc6aac760991',
             'dev_requirement' => true,
         ),
     ),
