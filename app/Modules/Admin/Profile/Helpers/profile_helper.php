@@ -2,30 +2,6 @@
 
 use Config\Services;
 
-if (! function_exists('send_activation_email'))
-{
-    /**
-    * Builds an account activation HTML email from views and sends it.
-    */
-    function send_activation_email($to, $activateHash)
-    {
-    	$htmlMessage = view('AdminProfile\Views\emails\header');
-    	$htmlMessage .= view('AdminProfile\Views\emails\activation', ['hash' => $activateHash]);
-    	$htmlMessage .= view('AdminProfile\Views\emails\footer');
-
-    	$email = \Config\Services::email();
-		$email->initialize([
-			'mailType' => 'html'
-		]);
-
-    	$email->setTo($to);
-        $email->setSubject(lang('Auth.registration'));
-		$email->setMessage($htmlMessage);
-
-        return $email->send();
-    }
-}
-
 if (! function_exists('send_confirmation_email'))
 {
     /**

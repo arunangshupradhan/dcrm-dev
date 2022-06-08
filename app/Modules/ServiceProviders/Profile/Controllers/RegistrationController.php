@@ -5,6 +5,7 @@ use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
 use ProviderProfile\Models\UserModel;
+use ProviderProfile\Models\SessionLogModel;
 use \App\Controllers\BaseController;
 
 
@@ -40,7 +41,7 @@ class RegistrationController extends BaseController
 	public function signUp()
 	{
 		if ($this->session->isProviderLoggedIn) {
-			return redirect()->to('account');
+			return redirect()->to('service-providers');
 		}
 
 		$this->data['title'] = 'Sign Up';
@@ -84,7 +85,7 @@ class RegistrationController extends BaseController
 			]
 		];
 		if (! $this->validate($rules, $errors)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            return redirect()->back()->withInput();
         }
 		$users = new UserModel();
 
@@ -114,14 +115,15 @@ class RegistrationController extends BaseController
 	public function activateAccount()
 	{
 		$users = new UserModel();
-
+		$logM = new SessionLogModel();
+		$agent = $this->request->getUserAgent();
 		// check token
 		$user = $users->where(['activate_hash' => $this->request->getGet('token'), 'group_id' => 2])
 			->where('active', 0)
 			->first();
 
 		if (is_null($user)) {
-			return redirect()->to('service-providers')->with('error', lang('Auth.activationNoUser'));
+			return redirect()->to('service-providers')->with('error', lang('Profile.activationNoUser'));
 		}
 
 		// update user account to active
@@ -130,7 +132,41 @@ class RegistrationController extends BaseController
 		$updatedUser['active'] = 1;
 		$users->save($updatedUser);
 
-		return redirect()->to('service-providers')->with('success', lang('Auth.activationSuccess'));
+		$agentData = array(
+			'browser' => $this->currentAgent($agent),
+			'platform' => $agent->getPlatform(),
+			'ip' => $this->request->getIPAddress(),
+			'user_id' => $user['id'],
+			'session_start' => date("Y-m-d g:i a")
+		);
+
+        // Add operation
+		$sessionID = $logM->insert_data($agentData);
+
+		// login OK, save user data to session
+		$this->session->set('isProviderLoggedIn', true);
+		$this->session->set('providerData', [
+			'id' 			=> $user['id'],
+			'group_id' 		=> $user['group_id'],
+			'sessionId'     => $sessionID,
+		]);
+
+		return redirect()->to('service-providers/packages')->with('success', lang('Profile.activationSuccess'));
+	}
+
+
+	private function currentAgent($agent)
+	{
+		if ($agent->isBrowser()) {
+			$currentAgent = $agent->getBrowser() . ' ' . $agent->getVersion();
+		} elseif ($agent->isRobot()) {
+			$currentAgent = $agent->getRobot();
+		} elseif ($agent->isMobile()) {
+			$currentAgent = $agent->getMobile();
+		} else {
+			$currentAgent = 'Unidentified User Agent';
+		}	
+		return $currentAgent;
 	}
 
 }

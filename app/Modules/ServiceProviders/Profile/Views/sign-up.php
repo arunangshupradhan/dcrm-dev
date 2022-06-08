@@ -1,5 +1,6 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
+<?php $validation = \Config\Services::validation(); ?>
 <div class="col-md-8 col-lg-6 col-xl-5">
     <div class="card overflow-hidden">
         <div class="bg-primary bg-soft">
@@ -40,14 +41,18 @@
                     <div class="mb-3">
                         <label for="email" class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" value="<?= old('name') ?>" placeholder="Enter Name">
+                        <span class="text-danger"><?= $validation->getError('name'); ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Usernme</label>
                         <input type="text" class="form-control" name="username" value="<?= old('username') ?>" placeholder="Enter Username">
+                        <span class="text-danger"><?= $validation->getError('username'); ?></span>
+
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="text" class="form-control" name="email" value="<?= old('email') ?>" placeholder="Enter Email">
+                        <span class="text-danger"><?= $validation->getError('email'); ?></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
@@ -55,13 +60,15 @@
                             <input type="password" name="password" class="form-control" placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
                             <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                         </div>
+                        <span class="text-danger"><?= $validation->getError('password'); ?></span>
                     </div>
+
                     <div class="mb-3">
-                       
                         <div class="input-group">
                             <span><img src="/captcha.php?captcha=<?= $captchaCode ?>" alt="captcha"></span>
                             <input type="text" name="captcha" class="form-control" placeholder="Enter Captcha">
                         </div>
+                        <span class="text-danger"><?= $validation->getError('captcha'); ?></span>
                     </div>
 
                     <div class="mt-3 d-grid">

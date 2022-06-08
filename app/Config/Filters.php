@@ -22,6 +22,9 @@ class Filters extends BaseConfig
         'adminAuth' => [
             \App\Filters\AdminAuthFilter::class,
         ],
+        'providerAuth' => [
+            \App\Filters\ProviderAuthFilter::class,
+        ],
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
@@ -49,6 +52,18 @@ class Filters extends BaseConfig
                     'service-providers',
                     'admin',
                     'service-providers/*',
+                ],
+            ],
+            'providerAuth' => [
+                'except' => [
+                    '',
+                    'admin',
+                    'admin/*',
+                    'service-providers',
+                    'service-providers/sign-up',
+                    'service-providers/activate-account',
+                    'service-providers/forgot-password',
+                    'service-providers/reset-password',
                 ],
             ],
         ],

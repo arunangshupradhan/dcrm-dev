@@ -48,7 +48,10 @@ class Autoload extends AutoloadConfig
         'AdminDashboard' => APPPATH.'Modules/Admin/Dashboard',
         'AdminPlan' => APPPATH.'Modules/Admin/Plan',
         // Modules for service providers begins
+        'ProviderTemplate' => APPPATH.'Modules/ServiceProviders/Template',
         'ProviderProfile' => APPPATH.'Modules/ServiceProviders/Profile',
+        'ProviderDashboard' => APPPATH.'Modules/ServiceProviders/Dashboard',
+        'ProviderPackage' => APPPATH.'Modules/ServiceProviders/Packages',
 
     ];
 

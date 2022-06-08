@@ -1,5 +1,6 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
+<?php $validation = \Config\Services::validation(); ?>
 <div class="col-md-8 col-lg-6 col-xl-5">
     <div class="card overflow-hidden">
         <div class="bg-primary bg-soft">
@@ -35,26 +36,33 @@
             </div>
             <div class="p-2">
                 <?= view('AdminProfile\Views\_notifications') ?>
-                <form class="form-horizontal" method="POST" action="<?= site_url('admin/reset-password'); ?>" accept-charset="UTF-8">
+                <form class="form-horizontal" method="POST" action="<?= site_url('service-providers/reset-password'); ?>" accept-charset="UTF-8">
                     <?= csrf_field() ?>
+                    <div class="mb-3">
+                        <label class="form-label">Token</label>
+                        <input type="text" class="form-control" name="token" value="<?= $_GET['token'] ?>" readonly/>
+                        <span class="text-danger"><?= $validation->getError('token'); ?></span>
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label">New Password</label>
                         <div class="input-group auth-pass-inputgroup">
-                            <input type="password" name="password" class="form-control" placeholder="********" aria-label="Password" aria-describedby="password-addon">
+                            <input type="password" name="password" class="form-control" placeholder="********" aria-label="Password" aria-describedby="password-addon" value="<?= old('password') ?>">
                             <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                         </div>
+                        <span class="text-danger"><?= $validation->getError('password'); ?></span>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Confirm New Password</label>
                         <div class="input-group auth-pass-inputgroup">
-                            <input type="password" name="password_confirm" class="form-control" placeholder="********" aria-label="Password" aria-describedby="password-addon">
-                            <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                            <input type="password" name="password_confirm" class="form-control" placeholder="********" aria-label="password_confirm" aria-describedby="password-addon" value="<?= old('password_confirm') ?>">
+                            <button class="btn btn-light " type="button" id="confirm-password-addon"><i class="mdi mdi-eye-outline"></i></button>
                         </div>
+                        <span class="text-danger"><?= $validation->getError('password_confirm'); ?></span>
                     </div>
 
                     <div class="mt-3 d-grid">
-                       <input type="hidden" name="token" value="<?= $_GET['token'] ?>" />
                         <button class="btn btn-primary waves-effect waves-light" type="submit">Save</button>
                     </div>
                 </form>
