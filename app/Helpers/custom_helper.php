@@ -99,12 +99,7 @@ if (!function_exists('get_count')) {
         if (!empty($where)) {
             $builder->where($where);
         }
-        $count = $builder->countAllResults();
-        if ($count > 0) {
-            return $count;
-        } else {
-            return 0;
-        }
+        return $builder->countAllResults();
     }
 }
 

@@ -1,5 +1,6 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
+<?php helper('custom'); ?>
 <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">
@@ -25,8 +26,7 @@
                                     </p>
                                 </div>
                                 <div class="text-center plan-btn">
-                                    <a href="javascript:void(0)" data-edit="<?= $plan->id ?>" class="btn btn-primary btn-sm waves-effect waves-light editPlans"><i class="dripicons-document-edit bx font-size-12 align-middle"></i>  Modify</a> &nbsp
-                                    <a href="javascript: void(0);" data-delete="<?= $plan->id; ?>"  class="btn btn-danger btn-sm waves-effect waves-light deletePlan"><i class="dripicons-trash bx font-size-12 align-middle"></i>&nbsp Delete</a>
+                                    <a href="<?= site_url('service-providers/packages/check-out/'.encrypt($plan->id)) ?>"  class="btn btn-primary btn-sm waves-effect waves-light"> Active</a>
                                 </div>
                             </div>
                         </div>

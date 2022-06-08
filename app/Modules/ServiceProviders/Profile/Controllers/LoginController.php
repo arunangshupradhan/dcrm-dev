@@ -81,7 +81,7 @@ class LoginController extends BaseController
 			'sessionId'     => $sessionID,
 		]);
 
-		return redirect()->to('service-providers/packages');
+		return redirect()->to('service-providers/dashboard');
 	}
 
     //--------------------------------------------------------------------

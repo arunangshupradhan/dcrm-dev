@@ -25,6 +25,9 @@ class Filters extends BaseConfig
         'providerAuth' => [
             \App\Filters\ProviderAuthFilter::class,
         ],
+        'checkPackage' => [
+            \App\Filters\CheckPackageFilter::class,
+        ],
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
@@ -64,6 +67,20 @@ class Filters extends BaseConfig
                     'service-providers/activate-account',
                     'service-providers/forgot-password',
                     'service-providers/reset-password',
+                ],
+            ],
+            'checkPackage' => [
+                'except' => [
+                    '',
+                    'admin',
+                    'admin/*',
+                    'service-providers',
+                    'service-providers/sign-up',
+                    'service-providers/activate-account',
+                    'service-providers/forgot-password',
+                    'service-providers/reset-password',
+                    'service-providers/packages',
+                    'service-providers/logout',
                 ],
             ],
         ],

@@ -20,7 +20,7 @@
 
 
 
-<script src="<?=site_url('assets/js/common/scripts.js?v=').filemtime('assets/js/common/custom.js')?>"></script>
+<script src="<?=site_url('assets/js/common/scripts.js?v=').filemtime('assets/js/common/scripts.js')?>"></script>
 <script src="<?=site_url('assets/js/common/custom.js?v=').filemtime('assets/js/common/custom.js')?>"></script>
 
 <script>
