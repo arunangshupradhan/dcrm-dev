@@ -80,6 +80,8 @@ class Filters extends BaseConfig
                     'service-providers/forgot-password',
                     'service-providers/reset-password',
                     'service-providers/packages',
+                    'service-providers/packages/check-out',
+                    'service-providers/packages/check-out/*',
                     'service-providers/logout',
                 ],
             ],
