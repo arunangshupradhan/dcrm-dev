@@ -25,8 +25,8 @@ class CheckPackageFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        helper('custom');
         if (session()->get('isProviderLoggedIn')) {
+            helper('custom');
             if (!get_count('provider_plans', ['user_id' => session()->get('providerData')['id']])) {
                 return redirect()->to(site_url('service-providers/packages'));
             }

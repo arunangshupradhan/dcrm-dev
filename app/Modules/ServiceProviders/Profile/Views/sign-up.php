@@ -65,7 +65,7 @@
 
                     <div class="mb-3">
                         <div class="input-group">
-                            <span><img src="/captcha.php?captcha=<?= $captchaCode ?>" alt="captcha"></span>
+                            <span><img src="/global/captcha/captcha.php?captcha=<?= $captchaCode ?>" alt="captcha"></span>
                             <input type="text" name="captcha" class="form-control" placeholder="Enter Captcha">
                         </div>
                         <span class="text-danger"><?= $validation->getError('captcha'); ?></span>
