@@ -261,6 +261,13 @@ if (!function_exists('validateDate')) {
     }
 }
 
+if (!function_exists('validatePhone')) {
+    function validatePhone($phone){
+       $valid_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
+       return $valid_number;
+    }
+}
+
 if (!function_exists('fieldValue')) {
     function fieldValue($table, $column = '', $where = ''){
         $db = db_connect();
@@ -386,7 +393,7 @@ if (!function_exists('checkPwdStrength')) {
         $number    = preg_match('@[0-9]@', $password);
         $specialChars = preg_match('@[^\w]@', $password);
 
-        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8 || strlen($password) > 15) {
             return false;
         }else{
             return true;

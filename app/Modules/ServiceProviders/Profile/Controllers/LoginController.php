@@ -57,6 +57,9 @@ class LoginController extends BaseController
 		}
 
 		// check activation
+		if (!$user['active'] || $user['activate_hash']) {
+			return redirect()->to('service-providers')->withInput()->with('error', lang('Profile.UserNotActivated'));
+		}
 		if (!$user['active'] || !$user['is_deleted']) {
 			return redirect()->to('service-providers')->withInput()->with('error', lang('Profile.notActivated'));
 		}

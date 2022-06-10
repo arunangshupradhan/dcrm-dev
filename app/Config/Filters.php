@@ -45,6 +45,7 @@ class Filters extends BaseConfig
             'csrf' => [
                 'except' => [
                     'admin/book/getAuthorDropdownData',
+                    'ajax/get-dd/*',
                 ],
             ],
             'adminAuth' => [
@@ -55,6 +56,7 @@ class Filters extends BaseConfig
                     'service-providers',
                     'admin',
                     'service-providers/*',
+                    'ajax/get-dd/*',
                 ],
             ],
             'providerAuth' => [
@@ -67,6 +69,7 @@ class Filters extends BaseConfig
                     'service-providers/activate-account',
                     'service-providers/forgot-password',
                     'service-providers/reset-password',
+                    'ajax/get-dd/*',
                 ],
             ],
             'checkPackage' => [
@@ -83,6 +86,7 @@ class Filters extends BaseConfig
                     'service-providers/packages/check-out',
                     'service-providers/packages/check-out/*',
                     'service-providers/logout',
+                    'ajax/get-dd/*',
                 ],
             ],
         ],

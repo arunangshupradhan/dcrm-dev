@@ -9,6 +9,7 @@
         <meta content="Scriptlab" name="author" />
         <link rel="shortcut icon" href="<?= site_url(); ?>assets/images/favicon.ico">
 
+        <link href="<?= site_url(); ?>assets/libs/select2/css/select2.min.css" rel="stylesheet" />
         <link href="<?= site_url(); ?>assets/libs/scriptlab-datatable/datatables.min.css" rel="stylesheet" />
         <link href="<?= site_url(); ?>assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" />
         <link href="<?= site_url(); ?>assets/css/icons.min.css" rel="stylesheet" />
@@ -18,7 +19,7 @@
 
         <link href="<?= site_url(); ?>assets/css/style.css" rel="stylesheet" />
         <link href="<?= site_url(); ?>assets/css/custom.css" rel="stylesheet" />
-
+        <?= $this->renderSection('css'); ?> <!-- DO NOT DELETE THIS LINE -->
     </head>
 
     <body data-sidebar="colored">

@@ -14,5 +14,6 @@
 </footer>
 </div>
 </div>
+<?= $this->renderSection('js'); ?>
 </body>
 </html>

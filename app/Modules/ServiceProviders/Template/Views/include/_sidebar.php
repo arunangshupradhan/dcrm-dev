@@ -11,6 +11,16 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-users font-size-15"></i>
+                        <span key="t-client" class="font-size-15">Clients</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                       <li><a href="<?= site_url('service-providers/clients') ?>" key="t-client" class="font-size-14">Clients</a></li>
+                       <li><a href="<?= site_url('service-providers/add-client') ?>" key="t-client" class="font-size-14">Add Client</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
                         <i class="dripicons-gear font-size-15"></i>
                         <span key="t-plan" class="font-size-15">Sttings</span>
                     </a>

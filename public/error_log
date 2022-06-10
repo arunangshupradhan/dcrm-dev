@@ -4,3 +4,7 @@
 [02-Jun-2022 01:13:02 America/Chicago] PHP Deprecated:  Optional parameter $string declared before required parameter $color is implicitly treated as a required parameter in /home3/phpblkr8/public_html/docker/app/Helpers/custom_helper.php on line 460
 [02-Jun-2022 01:13:02 America/Chicago] PHP Deprecated:  Optional parameter $fileType declared before required parameter $color is implicitly treated as a required parameter in /home3/phpblkr8/public_html/docker/app/Helpers/custom_helper.php on line 460
 [02-Jun-2022 01:13:02 America/Chicago] PHP Deprecated:  Optional parameter $codeType declared before required parameter $color is implicitly treated as a required parameter in /home3/phpblkr8/public_html/docker/app/Helpers/custom_helper.php on line 460
+[08-Jun-2022 14:40:47 UTC] PHP Parse error:  syntax error, unexpected '_592_000' (T_STRING), expecting ')' in /home3/phpblkr8/public_html/dcrm/app/Config/Constants.php on line 41
+[08-Jun-2022 14:40:51 UTC] PHP Parse error:  syntax error, unexpected '_592_000' (T_STRING), expecting ')' in /home3/phpblkr8/public_html/dcrm/app/Config/Constants.php on line 41
+[08-Jun-2022 14:40:56 UTC] PHP Parse error:  syntax error, unexpected '_592_000' (T_STRING), expecting ')' in /home3/phpblkr8/public_html/dcrm/app/Config/Constants.php on line 41
+[08-Jun-2022 14:41:25 UTC] PHP Parse error:  syntax error, unexpected '_592_000' (T_STRING), expecting ')' in /home3/phpblkr8/public_html/dcrm/app/Config/Constants.php on line 41

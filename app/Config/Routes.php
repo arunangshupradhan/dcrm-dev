@@ -37,6 +37,13 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+
+$routes->group("", ["namespace" => "App\Controllers\Common"], function ($routes) {
+   $routes->post('ajax/get-dd/country-list', 'CommonController::ajaxGetCountryListDd');
+   $routes->post('ajax/get-dd/state-list', 'CommonController::ajaxGetStateListDd');
+   $routes->post('ajax/get-dd/city-list', 'CommonController::ajaxGetCityListDd');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

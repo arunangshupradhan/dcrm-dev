@@ -52,6 +52,7 @@ class Autoload extends AutoloadConfig
         'ProviderProfile' => APPPATH.'Modules/ServiceProviders/Profile',
         'ProviderDashboard' => APPPATH.'Modules/ServiceProviders/Dashboard',
         'ProviderPackage' => APPPATH.'Modules/ServiceProviders/Packages',
+        'ProviderClient' => APPPATH.'Modules/ServiceProviders/Clients',
 
     ];
 

@@ -13,13 +13,13 @@ $(document).ready(function(){
 	});
 
 	/*WILL KEEP TAB ACTIVE EVEN AFTER PAGE RELOAD*/
-	$('a[data-bs-toggle="pill"]').on('show.bs.tab', function(e) {
-		localStorage.setItem('activeTab', $(e.target).attr('href'));
-	});
-	var activeTab = localStorage.getItem('activeTab');
-	if(activeTab){
-		$('#v-pills-tab a[href="' + activeTab + '"]').tab('show');
-	}
+	// $('a[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
+	// 	localStorage.setItem('activeTab', $(e.target).attr('href'));
+	// });
+	// var activeTab = localStorage.getItem('activeTab');
+	// if(activeTab){
+	// 	$('#parentTabHolder a[href="' + activeTab + '"]').tab('show');
+	// }
 
 	$(document).on('keypress', '.numbers', function(evt){
 		if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57)

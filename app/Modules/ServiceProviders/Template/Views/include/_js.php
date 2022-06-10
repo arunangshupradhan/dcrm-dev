@@ -12,12 +12,12 @@
 <script src="<?= site_url(); ?>assets/libs/simplebar/simplebar.min.js"></script>
 <script src="<?= site_url(); ?>assets/libs/node-waves/waves.min.js"></script>
 
+<script src="<?= site_url(); ?>assets/libs/select2/js/select2.min.js"></script>
 <script src="<?= site_url(); ?>assets/libs/apexcharts/apexcharts.min.js"></script>
 <script src="<?= site_url('assets/libs/scriptlab-confirm/jquery-confirm.min.js'); ?>"></script>
 
 
 
-<script src="<?= site_url(); ?>assets/js/app.js"></script>
 
 <!-- Datatable -->
 <script src="<?= site_url('assets/libs/scriptlab-datatable/datatables.min.js') ?>"></script>
@@ -64,7 +64,12 @@
 			icon: 'error',
 			title: message
 		})
-	}	
+	};
+	
+	function showTabs(tab) {
+		$('a[href="'+tab+'"]').tab('show');
+	};
+
 </script>
 
 <?php if($this->session->getFlashdata('message') && $this->session->getFlashdata('message_type') == 'success'){ ?>
@@ -111,3 +116,4 @@
 		}
 	}
 </script> -->
+<script src="<?= site_url(); ?>assets/js/app.js"></script>
